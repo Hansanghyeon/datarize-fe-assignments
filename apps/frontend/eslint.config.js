@@ -5,4 +5,5 @@ export default [
   ...hyeonEslintConfig.react,
   ...hyeonEslintConfig.prettier,
   ...hyeonEslintConfig.typescript,
+  ...hyeonEslintConfig.hansanghyeon,
 ]

@@ -467,10 +467,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.1.tgz#9a96ce501bc62df46c4031fbd970e3cc6b10f07b"
   integrity sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==
 
-"@hyeon/eslint-config@^7.0.14":
-  version "7.0.14"
-  resolved "https://registry.yarnpkg.com/@hyeon/eslint-config/-/eslint-config-7.0.14.tgz#0f76c29e0ce4e00b6d04f1381dd0fdcd6ad44ecd"
-  integrity sha512-zYdcdRZgjfDfGe5Z1R6hD3a6YIPOVOzw/W7bKZRoTNmvTCD6flGEIoP/l827JiMczM8+5wzU2vcZuebs6ZB8Ig==
+"@hyeon/eslint-config@^7.0.17":
+  version "7.0.17"
+  resolved "https://registry.yarnpkg.com/@hyeon/eslint-config/-/eslint-config-7.0.17.tgz#3bb03f601c14f0c5f0ce88faaea8cd937818919c"
+  integrity sha512-UctqInsJ0NaFvJo3Kmto6U3gFso0F2Mtp/L9+qrNKoPbrnryGBKf0WD96Y8fYSYdSGJ1XMOtFWfP5iZIRL2g2Q==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^8.16.0"
     "@typescript-eslint/parser" "^8.16.0"
