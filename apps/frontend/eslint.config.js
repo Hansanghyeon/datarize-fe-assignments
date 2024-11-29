@@ -1,8 +1,8 @@
 import hyeonEslintConfig from '@hyeon/eslint-config'
 
 export default [
-  ...hyeonEslintConfig.base,
+  ...hyeonEslintConfig.recommended,
   ...hyeonEslintConfig.react,
+  ...hyeonEslintConfig.prettier,
   ...hyeonEslintConfig.typescript,
-  ...hyeonEslintConfig.plus, // optional
 ]
