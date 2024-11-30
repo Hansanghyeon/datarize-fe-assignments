@@ -1,5 +1,5 @@
-import { ko, Faker } from '@faker-js/faker';
+import { en, Faker, ko } from '@faker-js/faker'
 
-export const _faker = new Faker({
-  locale: [ko],
-});
+export const __faker = new Faker({
+  locale: [ko, en],
+})
