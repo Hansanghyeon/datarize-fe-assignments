@@ -1,0 +1,7 @@
+services:
+  simple-storage-server:
+    image: caddy:latest
+    volumes:
+      - ./data:/srv
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    restart: unless-stopped

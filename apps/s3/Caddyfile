@@ -1,0 +1,20 @@
+:80 {
+    root * /srv
+    file_server browse
+
+    header {
+        Access-Control-Allow-Origin {http.request.host}
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+    }
+
+    @allowed_hosts {
+        host localhost hansanghyeon.github.io s3.dfa.toy.hyeon.pro
+    }
+
+    @not_allowed_hosts not {
+        host localhost hansanghyeon.github.io s3.dfa.toy.hyeon.pro
+    }
+
+    respond @not_allowed_hosts 403
+}
