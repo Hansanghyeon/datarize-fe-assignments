@@ -1,6 +1,5 @@
-import csvParse from 'csv-simple-parser'
-
 import { __faker } from '~/libs/faker'
+import { parseCsvField } from '~/libs/read-file-parse-csv'
 
 /**
  * @description
@@ -11,29 +10,12 @@ export async function* genCustomerEmail() {
   type T_csvRow = {
     customer_email: string
   }
-  // ====================================== example.csv 데이터 생성
-  const exampleFile = await Bun.file(`${__dirname}/example.csv`)
-    .text()
-    .catch(() => null)
 
-  if (exampleFile) {
-    const exampleData = csvParse(exampleFile, { header: true }) as T_csvRow[]
-    for (const row of exampleData) {
-      yield row.customer_email
-    }
-  }
+  // ====================================== example.csv 데이터 생성
+  yield* parseCsvField<T_csvRow>(`${__dirname}/example.csv`, 'customer_email')
 
   // ====================================== seed.csv 데이터 생성
-  const seedFile = await Bun.file(`${__dirname}/seed.csv`)
-    .text()
-    .catch(() => null)
-
-  if (seedFile) {
-    const seedData = csvParse(seedFile, { header: true }) as T_csvRow[]
-    for (const row of seedData) {
-      yield row.customer_email
-    }
-  }
+  yield* parseCsvField<T_csvRow>(`${__dirname}/seed.csv`, 'customer_email')
 
   // ====================================== faker 데이터 생성
   while (true) {
