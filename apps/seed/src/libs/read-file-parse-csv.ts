@@ -13,7 +13,9 @@ export async function* parseCsvField<T>(
   key: keyof T, // 필드 키만 전달
 ): AsyncGenerator<T[keyof T]> {
   try {
-    const fileContent = await Bun.file(filePath).text()
+    const fileContent = await Bun.file(filePath)
+      .text()
+      .catch(() => null)
     if (fileContent) {
       const csv = csvParse(fileContent, { header: true }) as T[]
       for (const row of csv) {
