@@ -1,0 +1,20 @@
+networks:
+  traefik_proxy:
+    external: true
+
+services:
+  simple-storage-server:
+    networks:
+      - default
+      - traefik_proxy
+    labels:
+      - traefik.enable=true
+      ## HTTP Routers
+      - traefik.http.routers.${SERVICE}-http.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.${SERVICE}-http.entrypoints=web
+      - traefik.http.routers.${SERVICE}-http.middlewares=http2https@file
+      ## HTTPS Routers
+      - traefik.http.routers.${SERVICE}.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.${SERVICE}.entrypoints=webs
+      - traefik.http.routers.${SERVICE}.tls.certresolver=leresolver
+      - traefik.http.services.${SERVICE}.loadbalancer.server.port=${SERVICE_PORT}
