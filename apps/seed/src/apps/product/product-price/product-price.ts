@@ -15,7 +15,7 @@ function removeLastDigit(price: number) {
 /**
  * @description
  * 제품가격을 만듭니다.
- * @return {number} 제품가격
+ * @return {string} 제품가격
  */
 export async function* genProductPrice() {
   type T_csvRow = {
@@ -34,6 +34,7 @@ export async function* genProductPrice() {
       __faker.commerce.price({ max: 1_000_000, min: 100, dec: 0 }),
       Number,
       removeLastDigit,
+      String,
     )
   }
 }
