@@ -7,8 +7,8 @@ import { getCustomer } from '~/apps/customer'
 test('example 데이터의 제품 테스트', async () => {
   const result = getCustomer()
 
-  // 10개의 제품명을 생성합니다.
-  const products = await pipe(
+  // 10개의 고객 생성합니다.
+  const customers = await pipe(
     Array.from({ length: 20 }),
     A.mapWithIndex(async (index) => ({
       id: index + 1,
@@ -17,7 +17,7 @@ test('example 데이터의 제품 테스트', async () => {
     (promises) => Promise.all(promises),
   )
 
-  expect(products).toMatchObject([
+  expect(customers).toMatchObject([
     { id: 1, name: '홍길동', email: '3dc3fm3d53fp3i4.3d73g33hn77@gmail.com' },
     { id: 2, name: '김영희', email: '3de3fr3hn3de3ft.3d53g5@hanmail.net' },
     { id: 3, name: '이철수', email: '3da3fm3d73fr3hn55@naver.com' },
