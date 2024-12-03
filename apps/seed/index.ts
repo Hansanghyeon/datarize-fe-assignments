@@ -1,7 +1,7 @@
 import { input, select, Separator } from '@inquirer/prompts'
 import { match, P } from 'ts-pattern'
 
-import { createCustomers } from '~/api/customers'
+import { createCustomers } from '~/apps/customer'
 
 // 클라이언트 입력
 const clientId = await input({
