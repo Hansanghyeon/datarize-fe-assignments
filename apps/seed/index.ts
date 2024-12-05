@@ -52,6 +52,16 @@ match(action)
     const length = await input({
       message: '생성할 고객 수를 입력해주세요',
     })
-    createCustomers({ clientId, length: Number(length) })
+    // api 요청은 5000개의 고객으로 나눌것이다.
+    // 100만개정도의 데이터를 만들어서 추가할때 js 메모리 부족할수있고 graphql의 병목현상이 일어날수있다.
+    // 100만개의 데이터를처리하는 도중에 1개가 실패하면 트랜젝션처리를 취소할때 문제가 생길수도 있다.
+    // length를 5000개로 나눈다.
+    const totalCustomers = Number(length)
+    for (let i = 0; i < totalCustomers; i += 5000) {
+      const batchSize = Math.min(5000, totalCustomers - i)
+      const customers = await createCustomers({ clientId, length: batchSize })
+    }
+    // stdin에 #때문에 출력 개행을 추가한다.
+    console.log('')
   })
   .otherwise(() => null)
