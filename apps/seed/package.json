@@ -2,14 +2,25 @@
   "name": "seed",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@hyeon/linter": "7.0.31",
+    "@types/bun": "latest",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "@faker-js/faker": "^9.2.0",
-    "csv-simple-parser": "^1.0.3"
+    "@inquirer/prompts": "^7.1.0",
+    "axios": "^1.7.8",
+    "csv-simple-parser": "^1.0.3",
+    "fp-ts": "^2.16.9",
+    "ts-pattern": "^5.5.0"
   }
 }
