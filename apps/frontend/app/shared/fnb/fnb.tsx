@@ -1,3 +1,3 @@
 export function Fnb() {
-  return <div>Fnb</div>
+  return <div></div>
 }
