@@ -9,7 +9,9 @@ import {
 
 import type { Route } from './+types/root'
 import stylesheet from './app.css?url'
+import { Fnb } from './shared/fnb'
 import { Gnb } from './shared/gnb'
+import { AppProvider } from './shared/provider'
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -35,8 +37,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Gnb />
-        {children}
+        <AppProvider>
+          <Gnb />
+          {children}
+          <Fnb />
+        </AppProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
