@@ -7,18 +7,20 @@ export default {
   theme: {
     container: {
       center: true,
+      padding: '1rem',
     },
     extend: {
       fontFamily: {
         sans: [
-          'Inter"',
-          'ui-sans-serif',
-          'system-ui',
-          'sans-serif',
-          'Apple Color Emoji"',
-          'Segoe UI Emoji"',
-          'Segoe UI Symbol"',
-          'Noto Color Emoji"',
+          '"Pretendard"',
+          '"Inter"',
+          '"ui-sans-serif"',
+          '"system-ui"',
+          '"sans-serif"',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
         ],
       },
       borderRadius: {
